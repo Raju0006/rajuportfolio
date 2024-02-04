@@ -5,9 +5,170 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PORTFOLIO WEBSITE</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/59dfe6baf1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+<div id="header">
+    <div id="container">
+        <a class="logo">PortFolio.</a>
+        <nav>    
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#Services">Services</a></li>
+                <li><a href="#Contact">Contact</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="Openmenu()"></i>
+        </nav>
+    </div>
+    <div class="header-text">
+        <p>Softwer Engineer</p>
+        <h1>Hi, I'm <span> Lakshmi Narasimha Raju </span><br> from Hyderabad</h1>
+    </div>
+</div>
+
+<!-----------------about--------------------->
+
+<div id="about">
+    <div class="con-about">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/JPEG image 3.jpeg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p> Demonstrating my passion for creating exceptional web experiences.
+                    I am currently working on personal projects to develop my skills. My journey doesn't end with these achievements. 
+                    I'm committed to continuous improvement and embrace the dynamic world of web development by constantly upgrading my skills and learning new technologies.</p>
+                    <div class="tab-title">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Html</span><br>Hyper Text Markup Language</li>
+                            <li><span>CSS</span><br>Cascading Style Sheets</li>
+                            <li><span>Java Script</span><br>Making Web Pages</li>
+                            <li><span>Python</span> <br>Backend Programming Language</li>
+                            <li><span>Mysql</span><br>Database Management System</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2019 - 2023</span><br>Computer Science and Engineering<br>from DRk institute of science and Technology</li>
+                            <li><span>2019</span><br>Intemediate<br> From Sri Chaitanya Junior College</li>
+                            <li><span>2017</span><br>10th <br> From Gowtham Model School</li>
+                        </ul>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-----------------Services--------------------->
+<div id="Services">
+    <div class="con-about">
+        <div class="sub-title">My Services</div>
+        <div class="services-list">
+            <div>
+                <i class="fa-brands fa-webflow"></i>
+                <h2>Web Design</h2>
+                <p>Effective web design requires a balance between aesthetic appeal and functionality, with a focus on creating a positive user experience. Designers often collaborate with developers, content creators, and other stakeholders to ensure that the final product meets both design and business goals.</p>
+            </div>
+            <div>
+                <i class="fa-brands fa-adn"></i>
+                <h2>App Design</h2>
+                <p>App designers collaborate closely with developers, product managers, and stakeholders to ensure the design aligns with the app's goals and meets user expectations. Iterative testing and feedback are often integral to refining the design throughout the development process.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-----------------Contact--------------------->
+<div id="Contact">
+    <div class="con-about">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p> <i class="fa-solid fa-paper-plane"></i> pnarsimharaju775@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> 9966784775</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/marasimha.raju/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/_r_a_j_u_7/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com/NarasimhaR41884"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/lakshmi-narasimha-raju-penmetsa-a90635248/"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>    
+            <div class="contact-Right"> 
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea type="text" rows="6" placeholder="Your message"></textarea>
+                    <button type="submit" class="btn btn2">submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="resume">
+    <a href="images/Resume.pdf" download class="btn">Dwonload Resume</a>
+</div>
+
+<div class="copyright">
+    <p>Copyright © Narasimha Raju. Made with <i class="fa-solid fa-heart"></i> </p>
+</div>
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links")
+    var tabcontents = document.getElementsByClassName("tab-contents")
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+<script>
+
+    var sidemenu = document.getElementById("sidemenu");
+
+    function Openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzfdUkPYRnfOPGQMqdRlG0bERpDYdJZaEdHVJV11uzNvvfU6URnYyphTc3vusPBqcFrVg/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+</script>
+
 </body>
 </html>
 
